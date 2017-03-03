@@ -1,0 +1,11 @@
+package curso_DAO;
+
+public class Aluno extends DAO{
+	@Override
+	static String TABLE_NAME = "aluno";
+	public Aluno(){
+
+	}
+	
+
+}

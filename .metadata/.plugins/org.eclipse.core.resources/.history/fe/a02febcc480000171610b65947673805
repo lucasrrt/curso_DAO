@@ -1,0 +1,16 @@
+package curso_DAO;
+
+public class DAO {
+	public void create(){
+		
+	}
+	public void retrieve(){
+		
+	}
+	public void update(){
+	
+	}
+	public void delete(){
+	
+	}
+}

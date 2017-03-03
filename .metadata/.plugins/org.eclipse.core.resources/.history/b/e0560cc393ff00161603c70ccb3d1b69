@@ -1,0 +1,38 @@
+package curso_DAO;
+
+import java.util.Scanner;
+
+public class Usuario {
+
+	public static void main() {
+		System.out.println("Usuario");
+		int opcao = 1;
+		menu();
+		Scanner reader = new Scanner(System.in);
+		opcao = reader.nextInt();
+		while(opcao!=0){
+			if(opcao == 1){
+				
+			}
+			menu();
+			opcao = reader.nextInt();
+		}
+		
+		reader.close();
+	}
+	
+	public static void menu(){		
+		System.out.println("#####################");
+		System.out.println("## MENU DO USUÁRIO ##");
+		System.out.println("#####################");
+		System.out.println("Escolha uma opção:");
+		System.out.print("1-Create\n"
+				+ "2-Show all\n"
+				+ "3-Update\n"
+				+ "4-Delete\n"
+				+ "0-Sair\n"
+				+ "opção:");
+	}
+
+
+}

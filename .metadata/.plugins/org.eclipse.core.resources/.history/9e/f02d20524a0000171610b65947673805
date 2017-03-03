@@ -1,0 +1,7 @@
+package curso_DAO;
+
+public class Aluno extends DAO{
+
+
+
+}

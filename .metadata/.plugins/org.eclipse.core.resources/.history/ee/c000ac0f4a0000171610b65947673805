@@ -1,0 +1,29 @@
+package curso_DAO;
+
+public class Aluno implements DAO {
+
+	@Override
+	public boolean create(String nome, String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void retrieve() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean update() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,17 @@
+package curso_DAO;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int opcao = 1;
+		System.out.println("Escolha uma opção:");
+		System.out.print("1-Alunos\n"
+				+ "2-Professores\n"
+				+ "3-Disciplinas\n"
+				+ "0-Sair\n"
+				+ "opção:");
+		System.out.println(Integer.toString(opcao));
+
+	}
+
+}

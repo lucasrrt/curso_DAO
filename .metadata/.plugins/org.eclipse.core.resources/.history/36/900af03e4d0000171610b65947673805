@@ -1,0 +1,9 @@
+package curso_DAO;
+
+public class Aluno extends DAO{
+	public Aluno(){
+		TABLE_NAME = "aluno";
+	}
+
+
+}

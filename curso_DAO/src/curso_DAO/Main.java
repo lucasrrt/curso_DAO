@@ -1,0 +1,131 @@
+package curso_DAO;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.util.Scanner;
+import java.util.TimerTask;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.util.Timer;
+import javax.swing.UIManager;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int opcao = 1;
+		menu1();
+		
+		Scanner reader = new Scanner(System.in);
+		opcao = reader.nextInt();
+		while(opcao!=0){
+			if(opcao == 1){
+				new Aluno().retrieveAll();
+			}
+			menu1();
+			opcao = reader.nextInt();
+		}
+		System.out.println("Até Logo!");
+	}
+	
+	public static void menu1(){
+		System.out.println("Escolha uma opção:");
+		System.out.print("1-Alunos\n"
+				+ "2-Professores\n"
+				+ "3-Disciplinas\n"
+				+ "0-Sair\n"
+				+ "opção:");
+	}
+	
+	public static void menu2(){
+		System.out.println("Escolha uma opção:");
+		System.out.print("1-Create\n"
+				+ "2-RetrieveAll\n"
+				+ "3-Update\n"
+				+ "4-Delete\n"
+				+ "0-Sair\n"
+				+ "opção:");
+	}
+	
+	public static void menuAluno(){
+		int opcao = 1;
+		menu2();
+		
+		Scanner reader = new Scanner(System.in);
+		opcao = reader.nextInt();
+		while(opcao!=0){
+			if(opcao == 2){
+				new Aluno().retrieveAll();
+			}
+			menu2();
+			opcao = reader.nextInt();
+		}
+		System.out.println("Até Logo!");
+	}
+	
+	public Main() {
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                JFrame frame = new JFrame("Testing");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.add(new TestPane());
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
+    }
+	
+	public class TestPane extends JPanel {
+
+        private int x = 0;
+        private int y = 0;
+
+        public TestPane() {
+        	Timer t = new Timer( );
+        	t.scheduleAtFixedRate(new TimerTask() {
+
+        	    @Override
+        	    public void run() {
+        	      moveBall();
+        	      repaint();
+
+        	    }
+        	}, 40,40);
+            
+        }
+
+        protected void moveBall() {
+            x++;
+            y++;
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(200, 200);
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Graphics2D g2d = (Graphics2D) g.create();
+            g2d.setColor(Color.RED);
+            g2d.fillOval(x, y, 30, 30);
+            g2d.dispose();
+        }
+
+    }
+	
+
+}

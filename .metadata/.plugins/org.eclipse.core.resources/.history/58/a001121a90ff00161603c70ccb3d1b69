@@ -1,0 +1,10 @@
+package curso_DAO;
+
+public class Usuario {
+
+	public static void main() {
+		System.out.println("Usuario");
+
+	}
+
+}

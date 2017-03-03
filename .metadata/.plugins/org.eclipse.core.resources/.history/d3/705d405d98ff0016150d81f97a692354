@@ -1,0 +1,32 @@
+package curso_DAO;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int opcao = 1;
+		menu();
+		Scanner reader = new Scanner(System.in);
+		opcao = reader.nextInt();
+		while(opcao!=0){
+			if(opcao == 1){
+				Usuario.menu();
+			}
+			menu();
+			opcao = reader.nextInt();
+		}
+		
+		reader.close();
+	}
+	
+	public static void menu(){
+		System.out.println("Escolha uma opção:");
+		System.out.print("1-Alunos\n"
+				+ "2-Professores\n"
+				+ "3-Disciplinas\n"
+				+ "0-Sair\n"
+				+ "opção:");
+	}
+
+}
