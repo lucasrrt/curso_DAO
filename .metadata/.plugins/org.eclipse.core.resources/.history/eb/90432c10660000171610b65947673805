@@ -17,12 +17,6 @@ import javax.swing.UIManager;
 public class Main {
 
 	public static void main(String[] args) {
-		//TODO 
-		//create: same order as table
-		//retrieve: nothing
-		//update: duplas ordenadas (2k,2k+1), onde os pares serão o nome das colunas enquanto os ímpares os valores
-		//obs: k = 0 significa a cláusula where, determinando elemento a ser modificado
-		//delete: nome da coluna e valor
 		int opcao = 1;
 		menu1();
 		

@@ -46,7 +46,7 @@ public class DAO {
 	}
 	public boolean update(){
 		try{
-			query("update "+getTableName()+" SET ");
+			//query("update ")
 			return true;
 		}catch (Exception e){
 			
