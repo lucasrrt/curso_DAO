@@ -1,0 +1,14 @@
+package curso_DAO.app.views.aluno;
+
+import javax.swing.JPanel;
+
+public class index extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public index() {
+
+	}
+
+}

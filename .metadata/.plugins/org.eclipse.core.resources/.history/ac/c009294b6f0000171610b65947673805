@@ -1,0 +1,20 @@
+package curso_DAO.app.views.aluno;
+
+import javax.swing.JPanel;
+import javax.swing.JList;
+import java.awt.BorderLayout;
+
+public class index extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public index() {
+		setLayout(new BorderLayout(0, 0));
+		
+		JList list = new JList();
+		add(list);
+
+	}
+
+}

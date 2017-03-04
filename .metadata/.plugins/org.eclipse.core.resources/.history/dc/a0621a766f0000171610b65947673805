@@ -1,0 +1,7 @@
+package curso_DAO.app.controllers;
+
+public class AlunoController {
+	public static void index(){
+		
+	}
+}
