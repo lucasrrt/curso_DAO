@@ -4,14 +4,17 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DAO {
+	String[] columns;
+	
 	private String getTableName(){
-		return getClass().getName().split("\\.")[1].toLowerCase();
+		return getClass().getName().split("\\.")[getClass().getName().split("\\.").length - 1].toLowerCase();
 	}
 	
 	
 	public DAO(String ...strings){
-
+		columns = strings;
 	}
+	
 	public boolean create(String ... strings){
 		try{
 			query("insert into "+getTableName()+" values "+"("+String.join(",",strings)+")");
@@ -88,4 +91,9 @@ public class DAO {
 			return null;
 		}
 	}
+	
+	public String toString (){
+		return String.join(",",columns);
+	}
+	
 }

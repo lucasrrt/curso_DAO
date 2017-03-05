@@ -1,8 +1,0 @@
-package curso_DAO;
-
-public interface DAO {
-	public boolean create(String ... strings);
-	public void retrieve();
-	public boolean update();
-	public boolean delete();
-}

@@ -1,0 +1,23 @@
+package curso_DAO.lib;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JPanel;
+
+public class Controller implements ActionListener {
+	protected JPanel container;
+	protected JPanel view;
+	
+	protected void render(){
+		container.removeAll();
+		container.add(view);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

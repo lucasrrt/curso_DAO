@@ -10,6 +10,5 @@ public class Aluno extends DAO{
 	protected static String getTableName(){
 		return "alunos";
 	}
-	
 
 }

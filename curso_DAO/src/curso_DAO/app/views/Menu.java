@@ -38,9 +38,6 @@ public class Menu extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Menu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -54,11 +51,7 @@ public class Menu extends JFrame {
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 		
 		JButton btnAluno = new JButton("aluno");
-		btnAluno.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				AlunoController.index();
-			}
-		});
+		btnAluno.addActionListener(new AlunoController(this));
 		panel.add(btnAluno);
 		
 		JButton btnProfessor = new JButton("professor");

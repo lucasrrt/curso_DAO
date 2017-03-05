@@ -1,0 +1,13 @@
+package curso_DAO.lib;
+
+import javax.swing.JPanel;
+
+public class Controller {
+	protected JPanel container;
+	protected JPanel view;
+	protected void render(){
+		container.removeAll();
+		container.add(view);
+	}
+	
+}
