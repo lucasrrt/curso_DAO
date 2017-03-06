@@ -15,10 +15,9 @@ public class DAO {
 		columns = strings;
 	}
 	
-	public boolean create(String ... strings){
+	public boolean create(String[] columns, String[] values){
 		try{
-			query("insert into "+getTableName()+" values "+"("+String.join(",",strings)+")");
-			
+			query("insert into "+getTableName()+ "('"+ String.join("','", columns) +"') values "+"('"+String.join("','",values)+"')");
 			return true;
 		}catch (Exception e){
 			e.printStackTrace();

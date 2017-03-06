@@ -15,12 +15,15 @@ import curso_DAO.lib.DAO;
 public class AlunoController extends Controller{
 	public AlunoController(JFrame container) {
 		super(container);
-		ArrayList<? extends DAO> alunos = new Aluno().retrieveAll();
-		this.view = new Index((ArrayList<Aluno>) alunos);
+		
+		this.view = new Index(this);
 		System.out.println("view:" + view);
 		System.out.println("container" + container);
 
 		// TODO Auto-generated constructor stub
+	}
+	public ArrayList<? extends DAO> getAlunos(){
+		 return new Aluno().retrieveAll();
 	}
 
 }

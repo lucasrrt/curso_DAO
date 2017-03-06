@@ -1,0 +1,19 @@
+package curso_DAO.app.controllers;
+
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+
+import curso_DAO.app.models.Aluno;
+import curso_DAO.app.views.aluno.Form;
+import curso_DAO.app.views.aluno.Index;
+import curso_DAO.lib.Controller;
+
+public class NovoAlunoController extends Controller{
+
+	public NovoAlunoController(JFrame container) {
+		super(container);
+		this.view = new Form(this);
+	}
+
+}

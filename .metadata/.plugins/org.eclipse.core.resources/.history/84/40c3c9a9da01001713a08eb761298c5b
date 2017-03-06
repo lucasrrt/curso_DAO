@@ -1,0 +1,13 @@
+package curso_DAO.lib;
+
+import javax.swing.JPanel;
+
+public class View {
+	public JPanel template;
+	protected Controller controller;
+
+	public View(Controller controller) {
+		this.controller=controller;
+		template = new JPanel();
+	}
+}

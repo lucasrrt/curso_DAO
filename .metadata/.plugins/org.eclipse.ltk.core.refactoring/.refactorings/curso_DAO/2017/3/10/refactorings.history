@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;curso_DAO.app.views.aluno.Form.main(...)&apos; to &apos;display&apos;&#x0A;- Original project: &apos;curso_DAO&apos;&#x0A;- Original element: &apos;curso_DAO.app.views.aluno.Form.main(...)&apos;&#x0A;- Renamed element: &apos;curso_DAO.app.views.aluno.Form.display(...)&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;main&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;curso_DAO.app.views.aluno{Form.java[Form~main~\[QString;" name="display" references="true" stamp="1488740820899" version="1.0"/>
+</session>

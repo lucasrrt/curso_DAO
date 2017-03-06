@@ -1,0 +1,14 @@
+package curso_DAO.app.controllers;
+
+import javax.swing.JFrame;
+
+import curso_DAO.lib.Controller;
+
+public class NovoAlunoController extends Controller{
+
+	public NovoAlunoController(JFrame container) {
+		super(container);
+		// TODO Auto-generated constructor stub
+	}
+
+}

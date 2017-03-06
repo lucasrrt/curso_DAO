@@ -1,0 +1,92 @@
+package curso_DAO.app.views.aluno;
+
+import javax.swing.JPanel;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+
+import curso_DAO.lib.Controller;
+
+import com.jgoodies.forms.layout.FormSpecs;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.BoxLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Form extends JPanel {
+	private JTextField name_field;
+	private JTextField course_field;
+	private JTextField teacher_field;
+	private Controller controller;
+	public Form(Controller controller) {
+		this.controller=controller;
+		setLayout(new FormLayout(new ColumnSpec[] {
+				FormSpecs.RELATED_GAP_COLSPEC,
+				ColumnSpec.decode("default:grow"),},
+			new RowSpec[] {
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				RowSpec.decode("default:grow"),}));
+		
+		JLabel lblNovoAluno = new JLabel("Novo Aluno");
+		add(lblNovoAluno, "2, 2");
+		
+		JLabel lblNome = new JLabel("Nome");
+		add(lblNome, "2, 6");
+		
+		name_field = new JTextField();
+		add(name_field, "2, 8, fill, default");
+		name_field.setColumns(10);
+		
+		JLabel lblCurso = new JLabel("Curso");
+		add(lblCurso, "2, 10");
+		
+		course_field = new JTextField();
+		add(course_field, "2, 12, fill, default");
+		course_field.setColumns(10);
+		
+		JLabel lblIdProfessor = new JLabel("Id Professor");
+		add(lblIdProfessor, "2, 14");
+		
+		teacher_field = new JTextField();
+		add(teacher_field, "2, 16, fill, top");
+		teacher_field.setColumns(10);
+		
+		JPanel panel = new JPanel();
+		add(panel, "2, 24, fill, fill");
+		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(controller);
+		panel.add(btnCancelar);
+		
+		JButton btnCriarAluno = new JButton("Criar Aluno");
+		panel.add(btnCriarAluno);
+	}
+
+
+	
+}

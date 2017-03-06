@@ -1,0 +1,117 @@
+package curso_DAO.app.views.aluno;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+
+import curso_DAO.app.models.Aluno;
+
+import com.jgoodies.forms.layout.FormSpecs;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Form extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JTextField name_field;
+	private JTextField course_field;
+	private JTextField teacher_field;
+
+	/**
+	 * Launch the application.
+	 */
+	public void display() {
+		try {
+			setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			setSize(640,480);
+			setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Form() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(new FormLayout(new ColumnSpec[] {
+				FormSpecs.RELATED_GAP_COLSPEC,
+				ColumnSpec.decode("default:grow"),},
+			new RowSpec[] {
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,}));
+		{
+			JLabel lblNome = new JLabel("Nome");
+			contentPanel.add(lblNome, "2, 2");
+		}
+		{
+			name_field = new JTextField();
+			contentPanel.add(name_field, "2, 4, fill, default");
+			name_field.setColumns(10);
+		}
+		{
+			JLabel lblCurso = new JLabel("Curso");
+			contentPanel.add(lblCurso, "2, 6");
+		}
+		{
+			course_field = new JTextField();
+			contentPanel.add(course_field, "2, 8, fill, default");
+			course_field.setColumns(10);
+		}
+		{
+			JLabel lblProfessor = new JLabel("Id Professor");
+			contentPanel.add(lblProfessor, "2, 10");
+		}
+		{
+			teacher_field = new JTextField();
+			contentPanel.add(teacher_field, "2, 12, fill, default");
+			teacher_field.setColumns(10);
+		}
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						new Aluno().create(new String[] {"nome","curso","professor_id"},new String[] {name_field.getText(), course_field.getText(), teacher_field.getText()});
+					}
+				});
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+
+}

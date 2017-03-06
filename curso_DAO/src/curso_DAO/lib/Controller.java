@@ -15,7 +15,7 @@ public class Controller implements ActionListener {
 		this.container = container;
 	}
 	
-	protected void render(){
+	public void render(){
 		System.out.println("render begin");
 		container.setContentPane(view);
 		container.invalidate();
